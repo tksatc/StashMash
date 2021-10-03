@@ -1,0 +1,59 @@
+﻿@model StashMash.Models.YarnDetail
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>YarnDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YarnDetailId" />
+            <div class="form-group">
+                <label asp-for="YarnId" class="control-label"></label>
+                <select asp-for="YarnId" class="form-control" asp-items="ViewBag.YarnId"></select>
+                <span asp-validation-for="YarnId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YarnColor" class="control-label"></label>
+                <input asp-for="YarnColor" class="form-control" />
+                <span asp-validation-for="YarnColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YarnColorCode" class="control-label"></label>
+                <input asp-for="YarnColorCode" class="form-control" />
+                <span asp-validation-for="YarnColorCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YarnColorLot" class="control-label"></label>
+                <input asp-for="YarnColorLot" class="form-control" />
+                <span asp-validation-for="YarnColorLot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantityOfSkeins" class="control-label"></label>
+                <input asp-for="QuantityOfSkeins" class="form-control" />
+                <span asp-validation-for="QuantityOfSkeins" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateUpdated" class="control-label"></label>
+                <input asp-for="DateUpdated" class="form-control" />
+                <span asp-validation-for="DateUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

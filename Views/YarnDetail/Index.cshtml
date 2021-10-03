@@ -1,0 +1,65 @@
+﻿@model IEnumerable<StashMash.Models.YarnDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Yarn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YarnColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YarnColorCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YarnColorLot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityOfSkeins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateUpdated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yarn.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YarnColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YarnColorCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YarnColorLot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityOfSkeins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateUpdated)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.YarnDetailId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.YarnDetailId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.YarnDetailId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

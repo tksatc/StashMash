@@ -1,0 +1,77 @@
+﻿@model IEnumerable<StashMash.Models.Yarn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Add Yarn</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FiberWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkeinYardage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkeinWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MeasurementUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateUpdated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiber.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiberWeight.FiberWeightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkeinYardage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkeinWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeasurementUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateUpdated)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.YarnId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.YarnId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.YarnId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
