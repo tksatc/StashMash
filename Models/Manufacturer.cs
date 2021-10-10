@@ -13,6 +13,9 @@ namespace StashMash.Models
         [StringLength(30, ErrorMessage ="The manufacturer's name cannot exceed 30 characters.")]
         public String Name { get; set; }
 
+        public int ProductLineId { get; set; }
+        public ProductLine ProductLine { get; set; }
+
         public String Url { get; set; }
     }
 }

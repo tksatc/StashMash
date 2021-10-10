@@ -23,8 +23,10 @@ namespace StashMash.Models
         public FiberWeight FiberWeight { get; set; }
 
         public int SkeinYardage { get; set; }
+        public int MeasurementUnitId { get; set; }
+        public MeasurementUnit MeasurementUnit { get; set; }
         public double SkeinWeight { get; set; }
-        public string MeasurementUnit { get; set; }
+
         public DateTime DateUpdated { get; set; } = DateTime.Now;
     }
 }

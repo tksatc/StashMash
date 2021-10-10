@@ -41,6 +41,7 @@ namespace StashMash.Controllers
                 return NotFound();
             }
 
+            ViewBag.totalYardage = yarnDetail.CalcTotalYardage();
             return View(yarnDetail);
         }
 
