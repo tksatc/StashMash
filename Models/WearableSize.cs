@@ -9,9 +9,8 @@ namespace StashMash.Models
     public class WearableSize
     {
         public int WearableSizeId { get; set; }
-        public int PatternId { get; set; }
-        public Pattern Pattern { get; set; }
-        public string wearableSizeOption { get; set; }
-        public string wearableSizeId { get; set; }
+        [Required(ErrorMessage = "Please enter a size name/description.")]
+        [StringLength(10, ErrorMessage = "Size description cannot exceed 10 characters.")]
+        public string Name { get; set; }
     }
 }

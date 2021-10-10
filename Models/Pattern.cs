@@ -19,11 +19,11 @@ namespace StashMash.Models
 
         public int DesignerId { get; set; }
         public Designer Designer { get; set; }
-        public int PatternCategoryId { get; set; }
-        public Category PatternCategory { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public int SkillLevelId { get; set; }
         public SkillLevel SkillLevel { get; set; }
-        public string PatternLocation { get; set; }
+        public string StorageLocation { get; set; }
         public DateTime DateUpdated { get; set; } = DateTime.Now;
     }
 }
